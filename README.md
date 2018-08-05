@@ -14,7 +14,20 @@ Find all documentation here [here](https://github.com/OxCom/symfony-rollbar-bund
     ```bash
     $ composer require oxcom/symfony-rollbar-bundle
     ```
-2. Provide configuration for it
+2. Enable the bundle by adding it to the list of registered bundles in the ``AppKernel::registerBundles()`` of your project:
+
+    ```php
+    public function registerBundles()
+    {
+        $bundles = [
+            // ...
+            new \SymfonyRollbarBundle\SymfonyRollbarBundle(),
+            // ...
+        ];
+
+        return $bundles;
+    }
+3. Provide configuration for it
     ```yaml
     symfony_rollbar:
             enable: true
